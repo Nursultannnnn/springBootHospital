@@ -7,6 +7,5 @@ import java.util.List;
 
 @Repository
 public interface DoctorRepo extends JpaRepository<Doctor, Long> {
-    // Если у вас тут был метод getAllDoctorsByHospitalId, замените его на стандартный:
     List<Doctor> findAllByHospitalId(Long hospitalId);
 }

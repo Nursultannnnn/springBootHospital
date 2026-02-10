@@ -11,7 +11,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MyException.class)
     public String handleMyException(MyException e, Model model) {
         model.addAttribute("errorMessage", e.getMessage());
-        return "errorPage"; // Открываем страницу errorPage.html
+        return "errorPage";
     }
 
     @ExceptionHandler(DataIntegrityViolationException.class)

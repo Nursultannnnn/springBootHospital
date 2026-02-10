@@ -14,7 +14,7 @@ import peaksoft.springboot.service.HospitalService;
 public class DepartmentController {
 
     private final DepartmentService departmentService;
-    private final HospitalService hospitalService; // Чтобы передать ID больницы в модель
+    private final HospitalService hospitalService;
 
     @GetMapping("/{hospitalId}")
     public String getDepartments(@PathVariable("hospitalId") Long hospitalId, Model model) {

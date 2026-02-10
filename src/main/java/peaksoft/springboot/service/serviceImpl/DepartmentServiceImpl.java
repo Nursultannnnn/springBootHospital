@@ -23,9 +23,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepo.findAllByHospitalId(hospitalId);
     }
 
-    // Этот метод не был в интерфейсе, но вы его использовали внутри контроллера
     public void saveDepartment(Long hospitalId, Department department) {
-        // getReferenceById создает прокси-объект (быстро, без лишнего запроса в БД)
         department.setHospital(hospitalRepo.getReferenceById(hospitalId));
         departmentRepo.save(department);
     }
@@ -52,7 +50,6 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .orElseThrow(() -> new RuntimeException("Department with id " + id + " not found"));
 
         department.setName(newDepartment.getName());
-        // Если есть другие поля, обновите их тут
 
         departmentRepo.save(department);
     }

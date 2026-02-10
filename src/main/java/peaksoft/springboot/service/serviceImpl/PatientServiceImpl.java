@@ -3,7 +3,6 @@ package peaksoft.springboot.service.serviceImpl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import peaksoft.springboot.entity.Hospital;
 import peaksoft.springboot.entity.Patient;
 import peaksoft.springboot.exceptions.MyException;
 import peaksoft.springboot.repo.HospitalRepo;
@@ -22,7 +21,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public void savePatient(Long hospitalId, Patient patient) {
-        // Валидация
+
         if (!patient.getPhoneNumber().startsWith("+996")) {
             throw new MyException("Phone number must start with +996 (e.g., +996700123456)");
         }

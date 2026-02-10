@@ -7,6 +7,5 @@ import java.util.List;
 
 @Repository
 public interface PatientRepo extends JpaRepository<Patient, Long> {
-    // Пример стандартного метода поиска по ID больницы
     List<Patient> findAllByHospitalId(Long hospitalId);
 }

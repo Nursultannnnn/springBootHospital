@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface DepartmentService {
 
-    // Вот этот метод нужно добавить, чтобы можно было сохранять с ID больницы
     void saveDepartment(Long hospitalId, Department department);
 
     void saveDepartment(Department department);
